@@ -5,5 +5,5 @@ app_name = "core"
 
 urlpatterns = [
 
-    path("api/", api , name="home"),
+    path("api/", api, name="home"),
 ]
