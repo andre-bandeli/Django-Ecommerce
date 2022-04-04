@@ -1,4 +1,11 @@
-/*Template Name: Fruitkha - Responsive Bootstrap4 Shop TemplateTemplate URI: Description: Bootstrap template for fruits or any other kind of shopAuthor: Imran HossainAuthor URI: https://imransdesign.com/Version: 1.0*/
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI: 
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
 /* -----------------------------------------------------------------------------
 
 # Base - Genral & Typography
@@ -2366,6 +2373,8 @@ ul.social-link-team li a {
 
 ----------------------------------------------------------------------------- */
 .product-filters {
+
+    display: flex;
   margin-bottom: 80px;
 }
 
@@ -2374,6 +2383,10 @@ ul.social-link-team li a {
   padding: 0;
   list-style: none;
   text-align: center;
+}
+
+#test {
+    display:flex;
 }
 
 .product-filters ul li {

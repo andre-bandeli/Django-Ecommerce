@@ -10,6 +10,7 @@ class detail_produto(DetailView):
     # extra_context = {"form": CartAddProductForm()}
 
 class list_produtos(ListView):
+    
     categoria = None
     paginate_by = 6
 

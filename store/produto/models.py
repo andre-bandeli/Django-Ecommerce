@@ -11,7 +11,7 @@ class AvailableManager(models.Manager):
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(unique=True, always_update=False, populate_from="name")
+    slug = AutoSlugField(unique=True, always_update=False, populate_from="nome")
 
     class Meta:
         ordering = ("nome",)
@@ -30,7 +30,7 @@ class Produto(models.Model):
         Categoria, related_name="produto", on_delete=models.CASCADE
     )
     nome = models.CharField(max_length=255)
-    slug = AutoSlugField(unique=True, always_update=False, populate_from="name")
+    slug = AutoSlugField(unique=True, always_update=False, populate_from="nome")
     image = models.ImageField(upload_to="produto/%Y/%m/%d", blank=True)
     descricao = models.TextField(blank=True)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
