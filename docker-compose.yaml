@@ -10,7 +10,7 @@ services:
        MYSQL_USER: 'root'
        MYSQL_ROOT_PASSWORD: 'Feagri@019'
   web:
-    build: .
+    build: stores
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/store
