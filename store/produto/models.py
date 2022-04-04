@@ -4,6 +4,11 @@ from django.urls import reverse
 
 
 
+class AvailableManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_available=True)
+
+
 class Categoria(models.Model):
     nome = models.CharField(max_length=255, unique=True)
     slug = AutoSlugField(unique=True, always_update=False, populate_from="name")
@@ -30,9 +35,10 @@ class Produto(models.Model):
     descricao = models.TextField(blank=True)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     is_available = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     objects = models.Manager()
-    # available = AvailableManager()
+    available = AvailableManager()
 
     class Meta:
         ordering = ("nome",)

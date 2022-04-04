@@ -22,8 +22,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'user',
-    'core',
-    'produto',
+    'api',
+    'produto.apps.ProdutoConfig',
+    'carrinho.apps.CarrinhoConfig',
 ]
 
 MIDDLEWARE = [
@@ -113,3 +114,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # AUTH_USER_MODEL = "user.User"
+
+CART_SESSION_ID = "cart"
+CART_ITEM_MAX_QUANTITY = 20
