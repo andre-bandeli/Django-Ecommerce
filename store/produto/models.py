@@ -21,6 +21,7 @@ class Categoria(models.Model):
 
 
 class Produto(models.Model):
+
     categoria = models.ForeignKey(
         Categoria, related_name="produto", on_delete=models.CASCADE
     )

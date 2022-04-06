@@ -1,13 +1,15 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView, ListView
 
 
 from .models import Categoria, Produto
 
 
-class detail_produto(DetailView):
-    queryset = Produto.available.all()
-    # extra_context = {"form": CartAddProductForm()}
+def home(request):
+    data = {}
+    data['db'] = Produto.objects.all()
+    return render(request, 'produto/produto_detail', data)
+
 
 class list_produtos(ListView):
     categoria = None
