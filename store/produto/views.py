@@ -2,13 +2,12 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView, ListView
 
 
-from .models import Categoria, Produto
+from .models import Categoria, Produto, ProdutoAmostra
 
 
-def home(request):
-    data = {}
-    data['db'] = Produto.objects.all()
-    return render(request, 'produto/produto_detail', data)
+class ProductDetailView(DetailView):
+    queryset = Produto.available.all()
+    # extra_context = {"form": CartAddProductForm()}
 
 
 class list_produtos(ListView):
@@ -16,7 +15,7 @@ class list_produtos(ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        queryset = Produto.available.all()
+        queryset = ProdutoAmostra.available.all()
 
         categoria_slug = self.kwargs.get("slug")
         if categoria_slug:
