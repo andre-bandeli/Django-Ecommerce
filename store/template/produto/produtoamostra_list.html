@@ -60,9 +60,9 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="{% url 'produto:list' %}">Home</a>
+								<li class="current-list-item"><a href="{% url 'produto:home' %}">Home</a>
 								</li>
-								<li><a href="{% url 'produto:list' %}">Shop</a>
+								<li><a href="{% url 'produto:shop' %}">Shop</a>
 									<ul class="sub-menu">
 										<li><a href="">Check Out</a></li>
 										<li><a href="">Cart</a></li>
@@ -193,7 +193,7 @@
 
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="{% static 'img/products/product-img-1.jpg' %}" alt=""></a>
+							<a href="{% url 'produto:detail' produtoAmostra.nome %}"><img src="{% static 'img/products/product-img-1.jpg' %}" alt=""></a>
 						</div>
 						<h3>{{produtoAmostra.nome}}</h3>
 						<p class="product-price"><span>Per Kg</span> {{produtoAmostra.preco}}</p>

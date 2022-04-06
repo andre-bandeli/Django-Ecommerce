@@ -5,19 +5,21 @@ from django.views.generic import DetailView, ListView
 from .models import Categoria, Produto, ProdutoAmostra
 
 
-class ProductDetailView(DetailView):
-    queryset = Produto.available.all()
-    # extra_context = {"form": CartAddProductForm()}
+class home(ListView):
 
+    def get_queryset(self):
+        queryset = ProdutoAmostra.available.all()
+        return queryset
 
 class list_produtos(ListView):
+
     categoria = None
     paginate_by = 6
 
     def get_queryset(self):
-        queryset = ProdutoAmostra.available.all()
-
+        queryset = Produto.available.all()
         categoria_slug = self.kwargs.get("slug")
+
         if categoria_slug:
             self.categoria = get_object_or_404(Categoria, slug=categoria_slug)
             queryset = queryset.filter(categoria=self.categoria)
@@ -29,3 +31,8 @@ class list_produtos(ListView):
         context["categoria"] = self.categoria
         context["categorias"] = Categoria.objects.all()
         return context
+
+class ProductDetailView(DetailView):
+    queryset = Produto.available.all()
+    # extra_context = {"form": CartAddProductForm()}
+
