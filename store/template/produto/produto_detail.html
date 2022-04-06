@@ -137,17 +137,17 @@
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
-						<h3>Green apples have polyphenols</h3>
-						<p class="single-product-pricing"><span>Per Kg</span> $50</p>
+						<h3>{{produto.nome}}</h3>
+						<p class="single-product-pricing"><span>Per Kg</span> ${{produto.preco}}</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
 						<div class="single-product-form">
-							<form action="index.html">
-								<input type="number" placeholder="0">
+							<form action="{% url 'cart:add' produto.id %}" method="post">
+								{% csrf_token %}
+								<input type="number" placeholder="1">
 							</form>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-							<p><strong>Categories: </strong>Fruits, Organic</p>
+							<a class="cart-btn"  type="submit" value="Adicionar ao Carrinho"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+							<p><strong>Categoria: </strong>{{produto.categoria.nome}}</p>
 						</div>
-						<h4>Share:</h4>
 						<ul class="product-share">
 							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href=""><i class="fab fa-twitter"></i></a></li>
@@ -307,25 +307,25 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
 	<!-- bootstrap -->
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{% static '/js/bootstrap/bootstrap.min.js' %}"></script>
 	<!-- count down -->
-	<script src="assets/js/jquery.countdown.js"></script>
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
 	<!-- isotope -->
-	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
 	<!-- waypoints -->
-	<script src="assets/js/waypoints.js"></script>
+	<script src="{% static 'js/waypoints.js' %}"></script>
 	<!-- owl carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
 	<!-- magnific popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
 	<!-- mean menu -->
-	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
 	<!-- sticker js -->
-	<script src="assets/js/sticker.js"></script>
+	<script src="{% static 'js/sticker.js' %}"></script>
 	<!-- main js -->
-	<script src="assets/js/main.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>

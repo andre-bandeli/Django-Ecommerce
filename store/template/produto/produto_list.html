@@ -158,9 +158,16 @@
 							<a href="{% url 'produto:detail' produto.slug %}"><img src="{% static 'img/noimg.jpg' %}" alt=""></a>
 							{% endif %}
 						</div>
-
-
 						<h3>{{produto.nome}}</h3>
+						  <form class="form-group" action="{% url 'cart:add' produto.id %}" method="post">
+								<p class="form-inline">
+									{{ form.quantity.label_tag }}
+									{% render_field form.quantity class+="form-control ml-sm-3" %}
+									{{ form.override }}
+								</p>
+								{% csrf_token %}
+                				<input class="btn btn-success" type="submit" value="Adicionar ao Carrinho">
+						  </form>
 						<p class="product-price"><span>Per Kg</span> R$ {{produto.preco}} </p>
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
