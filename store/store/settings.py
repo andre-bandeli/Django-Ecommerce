@@ -21,9 +21,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'produto',
-    'cart',
+    'core.apps.CoreConfig',
+    'produto.apps.ProdutoConfig',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -102,3 +102,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+CART_SESSION_ID = "cart"
+CART_ITEM_MAX_QUANTITY = 20
