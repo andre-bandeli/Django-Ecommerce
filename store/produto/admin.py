@@ -1,29 +1,29 @@
 from django.contrib import admin
 
-from .models import Categoria, Produto, ProdutoAmostra
+from .models import Category, Product, ProductHome
 
 
-@admin.register(Categoria)
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ["nome", "slug"]
+    list_display = ["name", "slug"]
 
 
-@admin.register(Produto)
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
-        "nome",
+        "name",
         "slug",
-        "categoria",
-        "preco",
+        "category",
+        "price",
         "is_available",
     ]
     list_filter = ["is_available"]
-    list_editable = ["preco", "is_available"]
+    list_editable = ["price", "is_available"]
 
-@admin.register(ProdutoAmostra)
-class ProdutoAmostraAdmin(admin.ModelAdmin):
+@admin.register(ProductHome)
+class ProductHomeAdmin(admin.ModelAdmin):
     list_display = [
-        "nome",
+        "name",
         "slug",
-        "preco",
+        "price",
     ]

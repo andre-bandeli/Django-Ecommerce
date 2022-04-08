@@ -1,4 +1,3 @@
-
 from django import forms
 from django.conf import settings
 
@@ -8,8 +7,8 @@ PRODUCT_QUANTITY_CHOICES = [
 
 
 class CartAddProductForm(forms.Form):
-    quantidade = forms.TypedChoiceField(
-        label="quantidade", choices=PRODUCT_QUANTITY_CHOICES, coerce=int
+    quantity = forms.TypedChoiceField(
+        label="Quantidade", choices=PRODUCT_QUANTITY_CHOICES, coerce=int
     )
     override = forms.BooleanField(
         required=False, initial=False, widget=forms.HiddenInput

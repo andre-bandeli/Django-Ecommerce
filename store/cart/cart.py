@@ -2,10 +2,9 @@ import copy
 from decimal import Decimal
 
 from django.conf import settings
-
+from produto.models import Product
 
 from .forms import CartAddProductForm
-from produto.models import Produto
 
 
 class Cart:
@@ -19,21 +18,21 @@ class Cart:
     def __iter__(self):
         cart = copy.deepcopy(self.cart)
 
-        products = Produto.objects.filter(id__in=cart)
+        products = Product.objects.filter(id__in=cart)
         for product in products:
-            cart[str(product.id)]["produto"] = product
+            cart[str(product.id)]["product"] = product
 
         for item in cart.values():
-            item["preco"] = Decimal(item["preco"])
-            item["preco_total"] = item["quantidade"] * item["preco"]
+            item["price"] = Decimal(item["price"])
+            item["total_price"] = item["quantity"] * item["price"]
             item["update_quantity_form"] = CartAddProductForm(
-                initial={"quantidade": item["quantidade"], "override": True}
+                initial={"quantity": item["quantity"], "override": True}
             )
 
             yield item
 
     def __len__(self):
-        return sum(item["quantidade"] for item in self.cart.values())
+        return sum(item["quantity"] for item in self.cart.values())
 
     def add(self, product, quantity=1, override_quantity=False):
         product_id = str(product.id)
@@ -64,10 +63,6 @@ class Cart:
         return sum(
             Decimal(item["price"]) * item["quantity"] for item in self.cart.values()
         )
-
-    def clear(self):
-        del self.session[settings.CART_SESSION_ID]
-        self.save()
 
     def save(self):
         self.session.modified = True
