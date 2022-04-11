@@ -77,7 +77,7 @@
 
 								<li><a href="{% url 'cart:detail' %}">Cart</a>
 								</li>
-								<li><a href="{% url 'user:login' %}">Login</a>
+								<li><a href="">Login</a>
 									<ul class="sub-menu">
 										<li><a href="">Logout</a></li>
 									</ul>
@@ -158,21 +158,15 @@
 
 						<div class="product-image">
 							{% if produto.image %}
-							<a href="{% url 'produto:detail' produto.slug %}"><img src="{% static 'img/products-img-1.png' %}" alt=""></a>
+							<a href="{% url 'produto:detail' produto.slug %}"><img src="{% static 'img/product-img-1.png' %}" alt=""></a>
 							{% else %}
 							<a href="{% url 'produto:detail' produto.slug %}"><img src="{% static 'img/noimg.jpg' %}" alt=""></a>
 							{% endif %}
 						</div>
 						<h3>{{produto.name}}</h3>
-						 <form class="form-group" action="{% url 'cart:add' produto.id %}" method="post">
-							<p class="form-inline">
-								{{ form.quantity.label_tag }}
-								{% render_field form.quantity class+="form-control ml-sm-3" %}
-								{{ form.override }}
-							</p>
-                {% csrf_token %}
-                <input class="btn btn-success" type="submit" value="Adicionar ao Carrinho">
-            </form>
+						<p class="product-price"><span>Per Kg</span> {{produto.price}}</p>
+
+						<a href="{% url 'produto:detail' produto.slug %}"><input class="car-btn" type="submit" value="detalhes"></a>
 
 
 					</div>

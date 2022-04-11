@@ -10,10 +10,13 @@ services:
        MYSQL_USER: 'root'
        MYSQL_ROOT_PASSWORD: 'Feagri@019'
   web:
-    build: stores
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/store
+    build: store
+        context: .
+        dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8080
+#
+#    volumes:
+#      - .:/store/
     ports:
       - "8000:8000"
     depends_on:

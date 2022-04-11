@@ -7,7 +7,7 @@ urlpatterns = [
     path('', include('core.urls')),
     path("produto/", include("produto.urls")),
     path("cart/", include("cart.urls")),
-    path("user/", include("user.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
 if settings.DEBUG:
     import debug_toolbar

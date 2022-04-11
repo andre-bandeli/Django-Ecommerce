@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "debug_toolbar",
     'widget_tweaks',
+    'crispy_forms',
     'user.apps.UserConfig',
     'core.apps.CoreConfig',
     'produto.apps.ProdutoConfig',
@@ -125,3 +126,6 @@ if DEBUG:
     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
 
 AUTH_USER_MODEL = "user.User"
+
+LOGIN_REDIRECT_URL = "/produto"
+LOGOUT_REDIRECT_URL = "/produto"
