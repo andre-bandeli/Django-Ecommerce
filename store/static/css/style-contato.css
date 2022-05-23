@@ -1,0 +1,20 @@
+#meta h2 {
+    width: 100%;
+    font-size: 22px;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+    font-weight: 200;
+    font-family: "Roboto", sans-serif;
+  }
+
+  #meta-2 {
+    margin-top: 10vh;
+  }
+  #meta-2 h2 {
+    width: 100%;
+    font-size: 22px;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+    font-weight: 200;
+    font-family: "Roboto", sans-serif;
+  }

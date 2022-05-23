@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'widget_tweaks',
     'crispy_forms',
-    'user.apps.UserConfig',
     'core.apps.CoreConfig',
     'produto.apps.ProdutoConfig',
     'cart.apps.CartConfig',
@@ -63,24 +62,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'store.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test_db',
-        'USER': 'root',
-        'PASSWORD': 'Feagri@019',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,8 +111,6 @@ if DEBUG:
     import socket
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
-
-AUTH_USER_MODEL = "user.User"
 
 LOGIN_REDIRECT_URL = "/produto"
 LOGOUT_REDIRECT_URL = "/produto"
