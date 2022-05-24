@@ -25,9 +25,11 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'widget_tweaks',
     'crispy_forms',
+    'localflavor',
     'core.apps.CoreConfig',
     'produto.apps.ProdutoConfig',
     'cart.apps.CartConfig',
+    'ordem',
 ]
 
 MIDDLEWARE = [
@@ -114,3 +116,5 @@ if DEBUG:
 
 LOGIN_REDIRECT_URL = "/produto"
 LOGOUT_REDIRECT_URL = "/produto"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

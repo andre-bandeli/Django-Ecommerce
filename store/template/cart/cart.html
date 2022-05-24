@@ -68,7 +68,7 @@
 								</li>
 								<li><a href="{% url 'produto:list' %}">Shop</a>
 									<ul class="sub-menu">
-										<li><a href="{% url 'cart:detail' %}">Check Out</a></li>
+										<li><a>Check Out</a></li>
 										<li><a href="{% url 'cart:detail' %}">Cart</a></li>
 									</ul>
 								</li>
@@ -209,7 +209,7 @@
 						</table>
 						<div class="cart-buttons">
 							<a href="cart.html" class="boxed-btn">Update Cart</a>
-							<a href="checkout.html" class="boxed-btn black">Check Out</a>
+							<a class="btn btn-success {% if not cart %}disabled{% endif %}" href="{% url 'ordem:create' %}">Check Out</a>
 						</div>
 					</div>
 

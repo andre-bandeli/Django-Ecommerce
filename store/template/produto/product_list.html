@@ -150,7 +150,7 @@
 			<div class="row product-lists">
 				{% for produto in product_list %}
 
-				<div class="col-lg-4 col-md-6 text-center" id="{{produto.category.name}}" >
+				<div class="col-lg-4 col-md-6 text-center" id="{{produto.category.name}}">
 					<div class="single-product-item">
 
 						<div class="product-image">
@@ -161,6 +161,7 @@
 							{% endif %}
 						</div>
 						<h3>{{produto.name}}</h3>
+						<h5>{{produto.category.name}}</h5>
 						<p class="product-price"><span>Per Kg</span> {{produto.price}}</p>
 
 						<a href="{% url 'produto:detail' produto.slug %}"><input class="car-btn" type="submit" value="detalhes"></a>
