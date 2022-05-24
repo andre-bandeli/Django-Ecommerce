@@ -16,6 +16,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
+
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %">
 	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
@@ -32,6 +35,7 @@
 	<!-- responsive -->
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style-home.css' %}">
+	
 	
 
 </head>
@@ -62,7 +66,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="{% url 'produto:list' %}">Home</a>
+								<li class="current-list-item"><a href="/">Home</a>
 								</li>
 								<li><a href="{% url 'produto:list' %}">Shop</a>
 									
@@ -216,6 +220,27 @@
 	</div>
 	<!-- end product section -->
 
+	<!-- category section -->
+	<div class="category-section mt-150 mb-150">
+
+		<div class="row">
+			<h2>Acessar por categoria</h2>
+			<div class="col-md-8">
+					<ul>
+						
+						{% for cat in categories %}
+						<li >
+							<img src="{% static 'img/categoria.jpg' %}" alt="">
+							<h2>{{cat.name}}</h2>
+						</li>
+						{% endfor %}
+					</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end product section -->
+
 	<!-- cart banner section -->
 	<section class="cart-banner pt-100 pb-100">
     	<div class="container">
@@ -225,7 +250,48 @@
     <!-- end cart banner section -->
 
 
-	<!-- end testimonail-section -->
+	<!-- category section -->
+	<div class="sells-section mt-150 mb-150">
+
+		<div class="row">
+			<h2>Produtos mais vendidos</h2>
+			<div class="col-md-8">
+					<ul>
+						
+						{% for cat in categories %}
+						<li >
+							<img src="{% static 'img/item6.png' %}" alt="">
+							<h2>{{cat.name}}</h2>
+						</li>
+						{% endfor %}
+					</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end product section -->
+
+<!-- category section -->
+<div class="suplly-section mt-150 mb-150">
+
+	<div class="row">
+		<h2>Linha de eletrônicos</h2>
+		<div class="col-md-8">
+				<ul>
+					
+					{% for cat in categories %}
+					<li >
+						<img src="{% static 'img/item2.png' %}" alt="">
+						<h2>{{cat.name}}</h2>
+					</li>
+					{% endfor %}
+				</ul>
+		</div>
+	</div>
+</div>
+</div>
+<!-- end product section -->
+
 	
 	<!-- advertisement section -->
 	<div class="abt-section mb-150 mt-150">
@@ -238,11 +304,10 @@
 				</div>
 				<div class="col-lg-6 col-md-12">
 					<div class="abt-text">
-						<p class="top-sub">no mercado desde 1999</p>
-						<h2>Somos a <span class="orange-text">Lojinha Online</span></h2>
-						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-						<a href="about.html" class="boxed-btn mt-4">conheça mais</a>
+						<p class="top-sub">DAY-OFF</p>
+						<h2>Produtos com<span class="orange-text"> 50% de desconto</span></h2>
+						<p>Confira nossa lista de descontos do dia. Promoções válidas de acordo com o regulamento</p>
+						<a href="about.html" class="boxed-btn mt-4">veja a lista</a>
 					</div>
 				</div>
 			</div>
@@ -253,15 +318,18 @@
 
 	<!-- category section -->
 	<div class="category-section mt-150 mb-150">
-
+		<div class="section-title text-center">	
+			<h3><span class="orange-text">Nossa </span> Política</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+		</div>
 			<div class="row">
+				
 				<div class="col-md-8">
                         <ul>
 							
 							{% for cat in categories %}
                             <li >
-								<img src="{% static 'img/categoria.jpg' %}" alt="">
-								<h2>{{cat.name}}</h2>
+								<img src="{% static 'img/item-post.jpg' %}" alt="">
 							</li>
 							{% endfor %}
                         </ul>
@@ -274,81 +342,6 @@
 
 
 	
-	<!-- shop banner -->
-	<section class="shop-banner">
-    	<div class="container">
-        	<h3>Ofertas exclusivas! <br>com Cupom <span class="orange-text"></span></h3>
-            <div class="sale-percent"><span>A partir <br> de</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">saiba mais</a>
-        </div>
-    </section>
-	<!-- end shop banner -->
-
-	<!-- latest news -->
-	<div class="latest-news pt-150 pb-150">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Nossas</span> Notícias</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-3"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="news.html" class="boxed-btn">More News</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end latest news -->
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">
@@ -447,7 +440,8 @@
 		</div>
 	</div>
 	<!-- end copyright -->
-	
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/carrousel.js' %}"></script>
 	<!-- jquery -->
 	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
 	<!-- bootstrap -->

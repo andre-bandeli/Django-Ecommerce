@@ -16,6 +16,7 @@ html {
   font-weight: 400;
   line-height: 28px;
   height: 100%;
+  background-color: white;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
   line-height: 1.8;
   color: #051922;
   overflow-x: hidden;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 body img {
@@ -1366,6 +1367,7 @@ a.mobile-show.search-bar-icon:hover {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-color: white;
 }
 
 .hero-text {
