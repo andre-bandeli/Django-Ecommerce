@@ -64,15 +64,16 @@
 								<li class="current-list-item"><a href="{% url 'produto:list' %}">Home</a>
 								</li>
 								<li><a href="{% url 'produto:list' %}">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="">Check Out</a></li>
-										<li><a href="{% url 'cart:detail' %}">Carrinho</a></li>
-									</ul>
+									
 								</li>
 								<li><a href="{% url 'core:about' %}">Sobre</a></li>
 								<li><a href="{% url 'core:contact' %}">Contato</a></li>
 
 								<li><a href="{% url 'cart:detail' %}">Carrinho</a>
+									<ul class="sub-menu">
+										<li><a href="{% url 'ordem:create' %}">Check Out</a></li>
+										<li><a href="{% url 'ordem:pedidos' %}">Meus Pedidos</a></li>
+									</ul>
 								</li>
 								<li><a href="/accounts/login">Login</a>
 									<ul class="sub-menu">

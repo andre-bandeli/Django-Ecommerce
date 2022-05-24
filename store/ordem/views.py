@@ -8,6 +8,8 @@ from cart.cart import Cart
 from .forms import OrderCreateForm
 from .models import Item, Order
 
+def pedidos(request):
+    return render(request, "ordem/order_created.html")
 
 class OrderCreateView(CreateView):
     model = Order
