@@ -28,11 +28,6 @@ body {
     
 } 
 
-
-.category-section  {
-
-    
-}
 .category-section .row  {
 
     display: inline;
@@ -148,14 +143,17 @@ body {
 
 .sells-section  {
     width: 90%;
+    height: 40vh;
     margin-left: auto;
     margin-right: auto;
+
 
 }
 
 .sells-section .row  {
 
     display: inline;
+
 }
 .sells-section .row h2  {
 
@@ -168,7 +166,9 @@ body {
 
     margin-left: auto;
     margin-right: auto;
+    height: 60%;
     margin-top: 5vh;
+
 
 }
 .sells-section .row  .col-md-8 ul {
@@ -181,8 +181,8 @@ body {
 
 }
 .sells-section .row  .col-md-8 li {
-    width: 40%;
-    height: 25vh;
+    width: 30%;
+    height: 30vh;
     margin-left: 2vh;
     margin-right: 2vh;
     display: inline;
@@ -201,15 +201,24 @@ body {
 }
 .sells-section .row  .col-md-8 li img{
     z-index: 1;
-    margin-top: 2vh;
-    width: 80%;
+    margin-top: 4vh;
+    width: 40%;
 }
 .sells-section .row  .col-md-8 li h2{
     font-size: 20px;
+    color: black;
+    background-color: transparent;
+    border: 1px solid rgb(2, 2, 2);
+    border-radius: 15px;
     margin-top: 1vh;
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
+
+}
+.sells-section .row  .col-md-8 li h5{
+
+    margin-top: 0vh;
 
 }
 

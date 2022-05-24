@@ -5,13 +5,13 @@ from django.views.generic import DetailView, ListView
 
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
-from .models import Category, Product
+from .models import Category, Product, ProductHomeList
 
 def home(request):
     data = {}
     data['db'] = Product.objects.all()
-
     data['categories'] = Category.objects.all()
+    data["produto_list"] = ProductHomeList.objects.all()
 
     return (render(request, 'produto/home.html', data))
 

@@ -258,10 +258,15 @@
 			<div class="col-md-8">
 					<ul>
 						
-						{% for cat in categories %}
+						{% for produto in produto_list %}
 						<li >
-							<img src="{% static 'img/item6.png' %}" alt="">
-							<h2>{{cat.name}}</h2>
+							{% if produto.image %}
+							<img class="card-img-top" src="../../media/{{produto.image}}" alt="">
+							{% else %}
+							<img class="card-img-top" src="{% static 'img/noimg.jpg' %}" alt="">
+							{% endif %}
+							<h2>{{produto.name}}</h2>
+							<h5>R$ {{produto.price}}</h5>
 						</li>
 						{% endfor %}
 					</ul>
