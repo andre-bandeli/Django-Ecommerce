@@ -1,0 +1,30 @@
+
+
+
+
+.single-product-item {
+    height: 45vh;
+    border: 1px solid rgba(24, 24, 24, 0.048);
+    box-shadow: rgba(177, 177, 177, 0.055) 0px 2px 8px 0px;
+    cursor: pointer;
+
+}
+
+.single-product-item:hover {
+
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    box-shadow: rgba(37, 37, 37, 0.322)  0px 7px 10px 0px ;
+
+}
+
+.single-product-item  .product-image {
+    width: 100%;
+    height: 25vh;
+
+}
+
+.single-product-item  .product-image img {
+    width: 80%;
+    height: 80%;
+
+}

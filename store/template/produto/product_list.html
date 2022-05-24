@@ -32,6 +32,7 @@
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<!-- responsive -->
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style-product-list.css' %}">
 
 </head>
 <body>
@@ -159,9 +160,9 @@
 
 						<div class="product-image">
 							{% if produto.image %}
-							<a href="{% url 'produto:detail' produto.slug %}"><img src="{% static 'img/product-img-1.png' %}" alt=""></a>
+							<img class="card-img-top" src="../../media/{{produto.image}}" alt="">
 							{% else %}
-							<a href="{% url 'produto:detail' produto.slug %}"><img src="{% static 'img/noimg.jpg' %}" alt=""></a>
+							<img class="card-img-top" src="{% static 'img/noimg.jpg' %}" alt="">
 							{% endif %}
 						</div>
 						<h3>{{produto.name}}</h3>
@@ -173,23 +174,25 @@
 
 					</div>
 				</div>
-{% endfor %}
+				{% endfor %}
 			</div>
 
 
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="pagination-wrap">
-						<ul>
-							<li><a href="#">Prev</a></li>
-							<li><a href="#">1</a></li>
-							<li><a class="active" href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
-					</div>
-				</div>
+			<div>
+
+				{% if is_paginated %}
+				
+					{% if page.has_previous %}
+					<a href="?page={{ page.previous_page_number }}">Anterior</a>
+					{% endif %}
+					Página {{ page.number }} de {{ page.paginator.num_pages }}.
+					{% if page.has_next %}
+					<a href="?page={{ page.next_page_number }}">Próxima</a>
+					{% endif %}
+				{% endif %}
 			</div>
+
+
 		</div>
 	</div>
 	<!-- end products -->

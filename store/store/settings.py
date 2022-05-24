@@ -114,7 +114,6 @@ if DEBUG:
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
 
-LOGIN_REDIRECT_URL = "/produto"
-LOGOUT_REDIRECT_URL = "/produto"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"

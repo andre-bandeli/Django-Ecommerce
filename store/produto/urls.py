@@ -1,5 +1,6 @@
 from django.urls import path
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 from .views import ProductListView, ProductDetailView, home
 
@@ -11,3 +12,5 @@ urlpatterns = [
     path("<slug:slug>/", ProductDetailView.as_view(), name="detail"),
     path("category/<slug:slug>/", ProductListView.as_view(), name="list_by_category"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

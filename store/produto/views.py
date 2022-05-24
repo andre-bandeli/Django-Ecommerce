@@ -10,7 +10,9 @@ from .models import Category, Product
 def home(request):
     data = {}
     data['db'] = Product.objects.all()
+
     data['categories'] = Category.objects.all()
+
     return (render(request, 'produto/home.html', data))
 
 class ProductDetailView(DetailView):
