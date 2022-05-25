@@ -18,7 +18,9 @@
 	<!-- fontawesome -->
 
 	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %">
+
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
 	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
@@ -35,7 +37,6 @@
 	<!-- responsive -->
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style-home.css' %}">
-	
 	
 
 </head>
@@ -249,53 +250,34 @@
     </section>
     <!-- end cart banner section -->
 
-
-	<!-- category section -->
-	<div class="sells-section mt-150 mb-150">
-
-		<div class="row">
-			<h2>Produtos mais vendidos</h2>
-			<div class="col-md-8">
-					<ul>
-						
-						{% for produto in produto_list %}
-						<li >
-							{% if produto.image %}
-							<img class="card-img-top" src="../../media/{{produto.image}}" alt="">
-							{% else %}
-							<img class="card-img-top" src="{% static 'img/noimg.jpg' %}" alt="">
-							{% endif %}
-							<h2>{{produto.name}}</h2>
-							<h5>R$ {{produto.price}}</h5>
-						</li>
-						{% endfor %}
-					</ul>
-			</div>
+<!-- end product section -->
+<div class="carrousel-sells">
+	<h2>Os mais vendidos</h2>
+	<div class="owl-carousel owl-theme">
+		{% for produto in produto_list %}
+		<div class="item">
+			<img src="{% static 'img/item2.png' %}" alt="">
+			<h2>{{produto.name}}</h2>
+			<h5>R$ {{produto.price}}</h5>
 		</div>
+		{% endfor %}
 	</div>
 </div>
+
+
 <!-- end product section -->
-
-<!-- category section -->
-<div class="suplly-section mt-150 mb-150">
-
-	<div class="row">
-		<h2>Linha de eletrônicos</h2>
-		<div class="col-md-8">
-				<ul>
-					
-					{% for cat in categories %}
-					<li >
-						<img src="{% static 'img/item2.png' %}" alt="">
-						<h2>{{cat.name}}</h2>
-					</li>
-					{% endfor %}
-				</ul>
+<div class="carrousel-subcategory">
+	<h2>Sub Categorias</h2>
+	<div class="owl-carousel owl-theme">
+		{% for cat in categories %}
+		<div class="item">
+			<img src="{% static 'img/item2.png' %}" alt="">
+			<h5>{{cat.name}}</h5>
 		</div>
+		{% endfor %}
 	</div>
 </div>
-</div>
-<!-- end product section -->
+
 
 	
 	<!-- advertisement section -->
@@ -417,9 +399,9 @@
 		</div>
 	</div>
 	<!-- end copyright -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/carrousel.js' %}"></script>
-	<!-- jquery -->
 	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
 	<!-- bootstrap -->
 	<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>

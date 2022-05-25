@@ -77,6 +77,7 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    display: inline;
 
 }
 
@@ -223,5 +224,192 @@ body {
 }
 
 
+.carrousel-subcategory {
 
+    width: 100%;
+    height: 50vh;
+  
+  }
+  
+  .carrousel-subcategory h2 {
+  
+    font-size: 20px;
+    color: black;
+    background-color: transparent;
+  
+    border-radius: 15px;
+    margin-top: 1vh;
+    width: 70%;
+    margin-left: 20vh;
+    margin-right: auto;
+  }
+  
+  .carrousel-subcategory .owl-carousel {
+  
+    width: 80%;
+    height: 35vh;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+    background-color: transparent;
+  
+  
+  }
+  .carrousel-subcategory .owl-carousel .item {
+    width: 80%;
+    height: 33vh;
+    margin-left: 2vh;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(14, 159, 216, 0.315);
+    border-radius: 15px;
+    
+  }
+  .carrousel-subcategory .owl-carousel .item:hover {
+  
+    background-color: rgba(26, 134, 177, 0.719);
+  
+    
+  }
+  .carrousel-subcategory .owl-carousel .item h5 {
+  
+    margin-top: 27vh;
+    margin-left: 22%;
+    position: absolute;
+  
+  }
+  .carrousel-subcategory .owl-carousel .item img {
+    
+    width: 60%;
+    margin-top: 2vh;
+    margin-left: 3vh;
+    border-radius: 2px;
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+  
+  }
+  .carrousel-subcategory .owl-carousel .item:hover img {
+    
+    width: 70%;
+    transition: .4s ease-in-out;
+    margin-top: 2vh;
+    margin-left: 1.5vh;
+    border-radius: 2px;
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+
+
+.carrousel-sells {
+
+    width: 100%;
+    height: 50vh;
+    margin-top: 25vh;
+  
+  }
+  
+  .carrousel-sells h2 {
+  
+    font-size: 20px;
+    color: black;
+  
+    border-radius: 15px;
+    margin-top: 1vh;
+    width: 70%;
+    margin-left: 20vh;
+    margin-right: auto;
+  }
+  
+  .carrousel-sells .owl-carousel {
+  
+    width: 80%;
+    height: 35vh;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+    background-color: transparent;
+  
+  
+  }
+  .carrousel-sells .owl-carousel .item {
+    width: 95%;
+    height: 35vh;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(17, 219, 108, 0.582);
+    border-radius: 15px;
+    
+  }
+  .carrousel-sells .owl-carousel .item:hover {
+    transition: .4s ease-in-out;
+    background-color: rgba(17, 219, 108, 0.945);
+  
+    
+  }
+  .carrousel-sells .owl-carousel .item h2 {
+  
+    width: 70%;
+    margin-top: 23vh;
+    margin-left: 4vh;
+    margin-right: auto;
+    background-color: transparent;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    position: absolute;
+  
+  }
+  .carrousel-sells .owl-carousel .item h2:hover {
+  
+    width: 70%;
+    margin-top: 23vh;
+    margin-left: 4vh;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.692);
+    transition: .4s ease-in-out;
+    border: none;
+    color: white;
+    position: absolute;
+  
+  }
+
+  .carrousel-sells .owl-carousel .item h5 {
+    width: 50%;
+    margin-top: 30vh;
+    margin-left: 20%;
+    position: absolute;
+
+  }
+  
+  .carrousel-sells .owl-carousel .item img {
+    
+    width: 50%;
+    margin-top: 2vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 2px;
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+  
+  }
+  .carrousel-sells .owl-carousel .item:hover img {
+    
+    width: 55%;
+    transition: .4s ease-in-out;
+    margin-top: 2vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 2px;
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+  }
+  
 
