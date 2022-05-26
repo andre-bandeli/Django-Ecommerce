@@ -4,9 +4,11 @@ from django.urls import reverse
 from django.views.generic import CreateView
 
 from cart.cart import Cart
+from ordem.models.Item import Item
+from ordem.models.Order import Order
 
 from .forms import OrderCreateForm
-from .models import Item, Order
+
 
 def pedidos(request):
     return render(request, "ordem/order_created.html")

@@ -9,6 +9,7 @@ from produto.models.Category import Category
 from produto.models.Product import Product
 from produto.models.ProductHomeList import ProductHomeList
 
+# Página Index [home]
 def home(request):
     data = {}
     data['db'] = Product.objects.all()
@@ -17,10 +18,12 @@ def home(request):
 
     return (render(request, 'produto/home.html', data))
 
+# Página de Detalhar Produtos
 class ProductDetailView(DetailView):
     queryset = Product.available.all()
     extra_context = {"form": CartAddProductForm()}
 
+# Página de Listar Produtos
 class ProductListView(ListView):
     category = None
     paginate_by = 6
