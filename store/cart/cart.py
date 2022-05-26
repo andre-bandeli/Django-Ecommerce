@@ -5,7 +5,6 @@ from produto.models import Product
 
 from .forms import CartAddProductForm
 
-
 class Cart:
     def __init__(self, request):
         if request.session.get(settings.CART_SESSION_ID) is None:

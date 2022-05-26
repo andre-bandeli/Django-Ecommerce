@@ -5,7 +5,9 @@ from django.views.generic import DetailView, ListView
 
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
-from .models import Category, Product, ProductHomeList
+from produto.models.Category import Category
+from produto.models.Product import Product
+from produto.models.ProductHomeList import ProductHomeList
 
 def home(request):
     data = {}

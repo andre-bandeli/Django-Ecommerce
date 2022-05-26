@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from .models import Category, Product, ProductHomeList, SubCategory
+from produto.models.Category import Category
+from produto.models.Product import Product
+from produto.models.ProductHomeList import ProductHomeList
+from produto.models.Subcategory import SubCategory
 
 
 @admin.register(Category)
@@ -10,7 +13,6 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display = ["name", "slug"]
-
 
 
 @admin.register(Product)
