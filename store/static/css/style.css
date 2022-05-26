@@ -207,11 +207,6 @@ h2 {
   background-color: #7e0cf5;
   opacity: .2; }
 
-.hero-area {
-    background-image: url("./hero-bg.jpg");
-    background-size: cover;
-    background-color: #000;
-}
 
 .single-product-item:hover {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;

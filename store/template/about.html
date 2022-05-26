@@ -8,7 +8,7 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>About</title>
+	<title>Sobre Nós</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
@@ -53,7 +53,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.html">
-								<img src="{% static 'img/logo.png' %}" alt="">
+								<img src="{% static 'img/log.png' %}" alt="" >
 							</a>
 						</div>
 						<!-- logo -->
@@ -77,10 +77,16 @@
 										<li><a href="{% url 'ordem:pedidos' %}">Meus Pedidos</a></li>
 									</ul>
 								</li>
-								<li><a href="">Login</a>
+								<li>
+									{% if user.is_authenticated %}
+									<a href="/accounts/logout">Logout</a>
+									{% else %}
+									<a href="/accounts/login">Login</a>
 									<ul class="sub-menu">
-										<li><a href="">Logout</a></li>
+										<li><a href="/accounts/login">Criar conta</a></li>
 									</ul>
+									{% endif %}
+									
 								</li>
 
 							</ul>
@@ -129,65 +135,7 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- featured section -->
-	<div class="feature-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7">
-					<div class="featured-text">
-						<h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
-						<div class="row">
-							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-shipping-fast"></i>
-									</div>
-									<div class="content">
-										<h3>Home Delivery</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-money-bill-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Melhores Preços</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-briefcase"></i>
-									</div>
-									<div class="content">
-										<h3>Pós Venda</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-sync-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Trocas e Garantia</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end featured section -->
+	
 	<div class="container" id="meta">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
@@ -270,6 +218,66 @@
 		</div>
 	</div>
 	<!-- end testimonail-section -->
+
+	<!-- featured section -->
+	<div class="feature-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="featured-text">
+						<h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
+						<div class="row">
+							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-shipping-fast"></i>
+									</div>
+									<div class="content">
+										<h3>Home Delivery</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-money-bill-alt"></i>
+									</div>
+									<div class="content">
+										<h3>Melhores Preços</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-briefcase"></i>
+									</div>
+									<div class="content">
+										<h3>Pós Venda</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-sync-alt"></i>
+									</div>
+									<div class="content">
+										<h3>Trocas e Garantia</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end featured section -->
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">

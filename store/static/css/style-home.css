@@ -2,10 +2,101 @@ body {
     background-color: white;
 }
 
+
+.hero-bg {
+  background-image: linear-gradient(to right top, #3072ae, #3f6ab3, #5560b4, #6f53b0, #8741a6);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-text {
+  display: table;
+  height: 100%;
+}
+
+.hero-text-tablecell {
+  display: table-cell;
+}
+
+.hero-area {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-area:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #07212e;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.hero-text p.subtitle {
+  color: #F28123;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 15px;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.hero-area div {
+  height: 100%;
+}
+
+.hero-area div.hero-text {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-area div.hero-text-tablecell {
+  height: auto;
+  vertical-align: middle;
+}
+
+.hero-area div.hero-text-tablecell div {
+  height: auto;
+  vertical-align: middle;
+}
+
+.hero-btns {
+  margin-top: 35px;
+}
+
+.hero-btns a.bordered-btn {
+  margin-left: 15px;
+}
+
+.hero-area div.hero-form {
+  background-color: #fff;
+  text-align: center;
+  width: 380px;
+  margin: 0 auto;
+  margin-right: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px #2d2d2d;
+  box-shadow: 0 0 15px #2d2d2d;
+  position: absolute;
+  right: 30px;
+  bottom: -15%;
+  height: 600px;
+}
+
 .cart-btn-product {
     margin-top: 10vh
 }
-
 
 .product-section .btn {
     width: 100%;
@@ -53,7 +144,7 @@ body {
     text-align: center;
 }
 .category-section .row  .col-md-8 li {
-    width: 30%;
+    width: 20%;
     height: 100%;
     margin-left: 2vh;
     margin-right: 2vh;
@@ -68,166 +159,18 @@ body {
     z-index: 1;
 }
 .category-section .row  .col-md-8 li h2{
+    width: 100%;
     font-size: 20px;
     margin-top: -5vh;
-
-}
-
-.suplly-section  {
-    width: 90%;
     margin-left: auto;
-    margin-right: auto;
-    display: inline;
 
 }
-
-.suplly-section .row  {
-
-    display: inline;
-}
-.suplly-section .row h2  {
-
-    margin-left: 20%;
-    font-size: 20px;
-}
-
-
-.suplly-section .row  .col-md-8 {
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5vh;
-
-}
-.suplly-section .row  .col-md-8 ul {
-
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    text-align: center;
-    
-
-}
-.suplly-section .row  .col-md-8 li {
-    width: 40%;
-    height: 27vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
-    display: inline;
-    text-align: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: rgba(14, 159, 216, 0.315);
-    border-radius: 10px;
-    
-}
-.suplly-section .row  .col-md-8 li:hover {
-    zoom: 1.05;
-    transition: .4s ease-in-out;
-    background-color: rgba(14, 159, 216, 0.541);
-
-}
-.suplly-section .row  .col-md-8 li img{
-    z-index: 1;
-    margin-top: 2vh;
-    width: 80%;
-}
-.suplly-section .row  .col-md-8 li h2{
-    font-size: 20px;
-    margin-top: 1vh;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-
-.sells-section  {
-    width: 90%;
-    height: 40vh;
-    margin-left: auto;
-    margin-right: auto;
-
-
-}
-
-.sells-section .row  {
-
-    display: inline;
-
-}
-.sells-section .row h2  {
-
-    margin-left: 20%;
-    font-size: 20px;
-}
-
-
-.sells-section .row  .col-md-8 {
-
-    margin-left: auto;
-    margin-right: auto;
-    height: 60%;
-    margin-top: 5vh;
-
-
-}
-.sells-section .row  .col-md-8 ul {
-
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    text-align: center;
-    
-
-}
-.sells-section .row  .col-md-8 li {
-    width: 30%;
-    height: 30vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
-    display: inline;
-    text-align: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: rgba(17, 219, 108, 0.582);
-    border-radius: 10px;
-    
-}
-.sells-section .row  .col-md-8 li:hover {
-    zoom: 1.05;
-    transition: .4s ease-in-out;
-    background-color: rgba(17, 219, 108, 0.945);
-
-}
-.sells-section .row  .col-md-8 li img{
-    z-index: 1;
-    margin-top: 4vh;
-    width: 40%;
-}
-.sells-section .row  .col-md-8 li h2{
-    font-size: 20px;
-    color: black;
-    background-color: transparent;
-    border: 1px solid rgb(2, 2, 2);
-    border-radius: 15px;
-    margin-top: 1vh;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-.sells-section .row  .col-md-8 li h5{
-
-    margin-top: 0vh;
-
-}
-
 
 .carrousel-subcategory {
 
     width: 100%;
     height: 50vh;
+    margin-top: 5vh;
   
   }
   
@@ -309,7 +252,7 @@ body {
 
     width: 100%;
     height: 50vh;
-    margin-top: 25vh;
+
   
   }
   
