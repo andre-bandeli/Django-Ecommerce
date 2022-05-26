@@ -4,27 +4,7 @@
 {% load static %}
 {% block content %}
 
-	<!-- hero area -->
-	<div class="hero-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9 offset-lg-2 text-center">
-					<div class="hero-text">
-						<div class="hero-text-tablecell">
-							<p class="subtitle">ELETRÔNICOS EM GERAL</p>
-							<h1>ONLINE <span class="orange-text">SHOP</span></h1>
-							<div class="hero-btns">
-								<a href="#produtos" class="boxed-btn">Ver Site</a>
-								<a href="{% url 'core:contact' %}" class="bordered-btn">Lista de Produtos</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end hero area -->
-
+	
 	<!-- features list section -->
 	<div class="list-section pt-80 pb-80">
 		<div class="container">
@@ -125,37 +105,36 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!-- end product section -->
+	<!-- end category section -->
 
-<!-- end product section -->
-<div class="carrousel-sells">
-	<h2>Os mais vendidos</h2>
-	<div class="owl-carousel owl-theme">
-		{% for produto in produto_list %}
-		<div class="item">
-			<img src="{% static 'img/item2.png' %}" alt="">
-			<h2>{{produto.name}}</h2>
-			<h5>R$ {{produto.price}}</h5>
+	<!-- Best Seller section -->
+	<div class="carrousel-sells">
+		<h2>Os mais vendidos</h2>
+		<div class="owl-carousel owl-theme">
+			{% for produto in produto_list %}
+			<div class="item">
+				<img src="{% static 'img/item2.png' %}" alt="">
+				<h2>{{produto.name}}</h2>
+				<h5>R$ {{produto.price}}</h5>
+			</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
-</div>
+	<!-- end Best Seller section -->
 
-
-<!-- end product section -->
-<div class="carrousel-subcategory">
-	<h2>Sub Categorias</h2>
-	<div class="owl-carousel owl-theme">
-		{% for cat in categories %}
-		<div class="item">
-			<img src="{% static 'img/item2.png' %}" alt="">
-			<h5>{{cat.name}}</h5>
+	<!-- Subcategories section -->
+	<div class="carrousel-subcategory">
+		<h2>Sub Categorias</h2>
+		<div class="owl-carousel owl-theme">
+			{% for cat in categories %}
+			<div class="item">
+				<img src="{% static 'img/item2.png' %}" alt="">
+				<h5>{{cat.name}}</h5>
+			</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
-</div>
-
+	<!-- end Subcategories section -->
 
 	
 	<!-- advertisement section -->
@@ -179,7 +158,6 @@
 		</div>
 	</div>
 	<!-- end advertisement section -->
-
 
 	<!-- category section -->
 	<div class="category-section mt-150 mb-150">
